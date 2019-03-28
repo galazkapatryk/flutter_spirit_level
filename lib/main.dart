@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var badColors = [
     Colors.red,
     Colors.redAccent,
-  ]
+  ];
   var correctColors = [
     Colors.green,
     Colors.greenAccent,
@@ -108,30 +108,36 @@ class _MyHomePageState extends State<MyHomePage> {
                 colors: getBackgroundColor(),
                               )
           )),
+     Center(
+              child: ClipOval(
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.white,
+                ),
+              )),
       Center(
         child:AnimatedContainer(
-          duration: Duration(milliseconds: 50),
-          child: Transform.translate(
-        offset: Offset(10 * xDotPosition, 20 * yDotPosition),
+          duration: Duration(milliseconds: 100),
+            alignment: Alignment(xDotPosition/10, yDotPosition/10),
         child: ClipOval(
             child: Container(
           width: 100,
           height: 100,
-          color: Colors.white,
-        )),
+          color: Colors.black,
+        ),
       ))),
       Center(
           child:AnimatedContainer(
-              duration: Duration(milliseconds: 50),
-              child: Transform.translate(
-                offset: Offset(-10 * xDotPosition, -10 * yDotPosition),
+              duration: Duration(milliseconds: 100),
+                alignment: Alignment(-xDotPosition/10, -yDotPosition/10),
                 child: ClipOval(
                     child: Container(
                       width: 100,
                       height: 100,
                       color: Colors.white,
                     )),
-              ))),
+              )),
     ]);
   }
 
